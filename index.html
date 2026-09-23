@@ -77,6 +77,17 @@
       padding: 0;
     }
 
+    .section-title {
+      margin: 0 0 14px;
+      padding-bottom: 6px;
+      font-size: 1.1em;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--ochre-deep);
+      border-bottom: 2px solid var(--ochre);
+    }
+
     .stack {
       display: grid;
       gap: 20px;
@@ -142,14 +153,14 @@
       flex-direction: column;
     }
 
-    .card h2 {
+    .card h3 {
       margin: 0 0 8px;
       font-size: 1.4em;
       color: var(--heading);
     }
 
-    .card h2 a { text-decoration: none; color: var(--heading); }
-    .card h2 a:hover { color: var(--tram-red); }
+    .card h3 a { text-decoration: none; color: var(--heading); }
+    .card h3 a:hover { color: var(--tram-red); }
 
     .card p {
       margin: 0 0 16px;
@@ -220,11 +231,13 @@
 
   <main>
     <div class="cards">
-      <div class="stack">
+      <section class="column">
+        <h2 class="section-title">Android Apps</h2>
+        <div class="stack">
         <div class="card card-app">
           <a href="https://plates.arpcentral.net"><img class="icon" src="assets/images/plates-icon.png" alt="Plates app icon, a blue Michigan license plate reading PLATES"></a>
           <div class="body">
-            <h2><a href="https://plates.arpcentral.net">Plates</a></h2>
+            <h3><a href="https://plates.arpcentral.net">Plates</a></h3>
             <p>The license plate game, with a score. Spot plates on a road trip and earn points based on how far each one travelled.</p>
             <div class="links">
               <a class="btn" href="https://plates.arpcentral.net">Visit the website</a>
@@ -236,25 +249,29 @@
         <div class="card card-app">
           <img class="icon" src="assets/images/perfect-pizza-icon.png" alt="Perfect Pizza Dough Forever app icon, a ball of pizza dough">
           <div class="body">
-            <h2>Perfect Pizza Dough Forever</h2>
+            <h3>Perfect Pizza Dough Forever</h3>
             <p>An Android app that helps you make the perfect pizza dough by calculating the flour to water ratio for the ideal hydration.</p>
             <div class="links">
               <a class="btn btn-play" href="https://play.google.com/store/apps/details?id=net.arpcentral.pizzadoh">Get it on Google Play</a>
             </div>
           </div>
         </div>
-        </div>
+          </div>
+      </section>
 
-      <div class="card card-music">
+      <section class="column">
+        <h2 class="section-title">Music</h2>
+        <div class="card card-music">
         <a href="https://negativeplayers.com"><img class="cover" src="assets/images/banjo-songs-v1.jpg" alt="Negative Players, Banjo Songs: Volume One album cover, a white tern flying over a banjo"></a>
-        <h2><a href="https://negativeplayers.com">Negative Players</a></h2>
+        <h3><a href="https://negativeplayers.com">Negative Players</a></h3>
         <p class="album">Banjo Songs: Volume One</p>
         <p>Music, discography, and where to listen.</p>
         <div class="links">
           <a class="btn" href="https://negativeplayers.com">Visit the website</a>
           <a class="btn btn-bandcamp" href="https://negativeplayers.bandcamp.com">Listen on Bandcamp</a>
         </div>
-      </div>
+        </div>
+      </section>
     </div>
   </main>
 </body>
