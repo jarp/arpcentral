@@ -56,10 +56,13 @@
     h1 {
       margin: 0;
       padding: 16px;
-      font-size: 2.2em;
-      letter-spacing: 0.04em;
+      font-size: 4em;
+      letter-spacing: 1.0em;
+      text-transform: uppercase;
       color: var(--heading);
     }
+
+    h1 span { margin-right: -1.0em; }
 
     .hero {
       display: block;
@@ -137,6 +140,11 @@
     }
 
     @media (max-width: 700px) {
+      h1 {
+        font-size: 2em;
+        letter-spacing: 0.4em;
+      }
+      h1 span { margin-right: -0.4em; }
       .cards {
         grid-template-columns: minmax(0, 1fr);
       }
@@ -234,7 +242,7 @@
 <body>
   <div class="site">
   <header>
-    <h1>Arp Central</h1>
+    <h1><span>Arp Central</span></h1>
   </header>
 
   <img class="hero" src="assets/images/station-thin.png" alt="A red and white tram pulling into a station in front of a yellow building">
