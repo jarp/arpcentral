@@ -82,7 +82,7 @@
       display: grid;
       grid-template-columns: minmax(0, 1fr) minmax(0, 1.4fr);
       gap: 20px;
-      align-items: start;
+      align-items: stretch;
       list-style: none;
       margin: 0;
       padding: 0;
@@ -99,8 +99,20 @@
       border-bottom: 2px solid var(--ochre);
     }
 
+    .column {
+      display: flex;
+      flex-direction: column;
+      min-width: 0;
+    }
+
+    .column > .card {
+      flex: 1;
+    }
+
     .stack {
+      flex: 1;
       display: grid;
+      grid-template-rows: 1fr 1fr;
       gap: 20px;
     }
 
@@ -114,6 +126,7 @@
     }
 
     .card-music .album {
+      flex: 0 0 auto;
       margin: -8px 0 16px;
       font-size: 0.9em;
       color: var(--muted);
@@ -146,6 +159,9 @@
       h1 span { margin-right: -0.4em; }
       .cards {
         grid-template-columns: minmax(0, 1fr);
+      }
+      .stack {
+        grid-template-rows: auto;
       }
       .card.card-app {
         grid-template-columns: 72px minmax(0, 1fr);
