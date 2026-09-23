@@ -69,11 +69,66 @@
 
     .cards {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(min(260px, 100%), 1fr));
+      grid-template-columns: minmax(0, 1fr) minmax(0, 1.4fr);
       gap: 20px;
+      align-items: start;
       list-style: none;
       margin: 0;
       padding: 0;
+    }
+
+    .stack {
+      display: grid;
+      gap: 20px;
+    }
+
+    .card-music .cover {
+      display: block;
+      width: 100%;
+      height: auto;
+      border-radius: 6px;
+      margin-bottom: 16px;
+      box-shadow: 0 2px 8px rgba(43, 36, 28, 0.25);
+    }
+
+    .card-music .album {
+      margin: -8px 0 16px;
+      font-size: 0.9em;
+      color: var(--muted);
+    }
+
+    .card.card-app {
+      display: grid;
+      grid-template-columns: 96px minmax(0, 1fr);
+      column-gap: 18px;
+    }
+
+    .card-app .icon {
+      width: 96px;
+      height: 96px;
+      border-radius: 20px;
+      box-shadow: 0 2px 6px rgba(43, 36, 28, 0.25);
+    }
+
+    .card-app .body {
+      display: flex;
+      flex-direction: column;
+      min-width: 0;
+    }
+
+    @media (max-width: 700px) {
+      .cards {
+        grid-template-columns: minmax(0, 1fr);
+      }
+      .card.card-app {
+        grid-template-columns: 72px minmax(0, 1fr);
+        column-gap: 14px;
+      }
+      .card-app .icon {
+        width: 72px;
+        height: 72px;
+        border-radius: 16px;
+      }
     }
 
     .card {
@@ -153,33 +208,43 @@
   <img class="hero" src="assets/images/station-thin.png" alt="A red and white tram pulling into a station in front of a yellow building">
 
   <main>
-    <ul class="cards">
-      <li class="card">
-        <h2><a href="https://plates.arpcentral.net">Plates</a></h2>
-        <p>The license plate game, with a score. Spot plates on a road trip and earn points based on how far each one travelled.</p>
-        <div class="links">
-          <a class="btn" href="https://plates.arpcentral.net">Visit the website</a>
-          <a class="btn btn-play" href="https://play.google.com/store/apps/details?id=net.arpcentral.tectonics">Get it on Google Play</a>
+    <div class="cards">
+      <div class="stack">
+        <div class="card card-app">
+          <a href="https://plates.arpcentral.net"><img class="icon" src="assets/images/plates-icon.png" alt="Plates app icon, a blue Michigan license plate reading PLATES"></a>
+          <div class="body">
+            <h2><a href="https://plates.arpcentral.net">Plates</a></h2>
+            <p>The license plate game, with a score. Spot plates on a road trip and earn points based on how far each one travelled.</p>
+            <div class="links">
+              <a class="btn" href="https://plates.arpcentral.net">Visit the website</a>
+              <a class="btn btn-play" href="https://play.google.com/store/apps/details?id=net.arpcentral.tectonics">Get it on Google Play</a>
+            </div>
+          </div>
         </div>
-      </li>
 
-      <li class="card">
+        <div class="card card-app">
+          <img class="icon" src="assets/images/perfect-pizza-icon.png" alt="Perfect Pizza Dough Forever app icon, a ball of pizza dough">
+          <div class="body">
+            <h2>Perfect Pizza Dough Forever</h2>
+            <p>An Android app that helps you make the perfect pizza dough by calculating the flour to water ratio for the ideal hydration.</p>
+            <div class="links">
+              <a class="btn btn-play" href="https://play.google.com/store/apps/details?id=net.arpcentral.pizzadoh">Get it on Google Play</a>
+            </div>
+            <p class="small"><a href="perfectpizza/privacy.html">Privacy Policy</a></p>
+          </div>
+        </div>
+        </div>
+
+      <div class="card card-music">
+        <a href="https://negativeplayers.com"><img class="cover" src="assets/images/banjo-songs-v1.jpg" alt="Negative Players, Banjo Songs: Volume One album cover, a white tern flying over a banjo"></a>
         <h2><a href="https://negativeplayers.com">Negative Players</a></h2>
+        <p class="album">Banjo Songs: Volume One</p>
         <p>Music, discography, and where to listen.</p>
         <div class="links">
           <a class="btn" href="https://negativeplayers.com">Visit the website</a>
         </div>
-      </li>
-
-      <li class="card">
-        <h2>Perfect Pizza Dough Forever</h2>
-        <p>An Android app that helps you make the perfect pizza dough by calculating the flour to water ratio for the ideal hydration.</p>
-        <div class="links">
-          <a class="btn btn-play" href="https://play.google.com/store/apps/details?id=net.arpcentral.pizzadoh">Get it on Google Play</a>
-        </div>
-        <p class="small"><a href="perfectpizza/privacy.html">Privacy Policy</a></p>
-      </li>
-    </ul>
+      </div>
+    </div>
   </main>
 </body>
 </html>
