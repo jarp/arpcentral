@@ -21,17 +21,26 @@
       --green: #2f5a4a;
       --green-hover: #3d7360;
       --line: #d8cbae;
+      --outer: #1c1a17;
     }
 
     * { box-sizing: border-box; }
 
     body {
-      background-color: var(--bg);
+      background-color: var(--outer);
       color: var(--text);
       margin: 0;
       padding: 0;
       font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
       line-height: 1.5;
+    }
+
+    .site {
+      max-width: 1250px;
+      min-height: 100vh;
+      margin: 0 auto;
+      background-color: var(--bg);
+      box-shadow: 0 0 24px rgba(0, 0, 0, 0.5);
     }
 
     a { color: var(--green); }
@@ -223,6 +232,7 @@
 </head>
 
 <body>
+  <div class="site">
   <header>
     <h1>Arp Central</h1>
   </header>
@@ -274,5 +284,6 @@
       </section>
     </div>
   </main>
+  </div>
 </body>
 </html>
