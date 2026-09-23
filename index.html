@@ -1,55 +1,132 @@
-
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <title>The page you were looking for doesn't exist (404)</title>
+  <meta charset="utf-8">
+  <title>Arp Central</title>
   <meta name="viewport" content="width=device-width,initial-scale=1">
-<head>
-  <title>Arp. Central. Dot. Net.</title>
-  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="description" content="Arp Central: home of Plates, Negative Players, and Perfect Pizza Dough Forever.">
   <style>
-    body {
-      background-color: ##191919;
-      color: #ececec;
-      padding: 0px;
-      margin: 0px;
-      text-align: center;
+    :root {
+      --bg: #191919;
+      --panel: #222222;
+      --card: #2a2a2a;
+      --text: #ececec;
+      --muted: #b5b5b5;
+      --accent: #d23b3b;
+      --accent-hover: #ea5a5a;
     }
 
-    a,
-    a:hover,
-    a:visited {
-      color: #fff;
-      text-decoration: none
+    * { box-sizing: border-box; }
+
+    body {
+      background-color: var(--bg);
+      color: var(--text);
+      margin: 0;
+      padding: 0;
+      font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+      line-height: 1.5;
     }
+
+    a { color: #fff; }
+    a:hover { color: var(--accent-hover); }
 
     header {
-      background-color: #222222;
+      background-color: var(--panel);
       border-bottom: 6px solid #000;
-      font-size: 1.4em;
-      padding: 0px
+      text-align: center;
     }
 
     h1 {
-        padding: 10px;
-        margin: 0px;
+      margin: 0;
+      padding: 16px;
+      font-size: 2.2em;
+      letter-spacing: 0.04em;
+    }
+
+    .hero {
+      display: block;
+      width: 100%;
+      height: auto;
+      max-height: 420px;
+      object-fit: cover;
+      border-bottom: 6px solid #000;
     }
 
     main {
-      background-image: url(assets/images/station-thin.png);
-      background-repeat: no-repeat;
-      background-position: center, center;
-      background-size: cover;
-      min-height: 300px;
-  }
-
-    .message {
-      padding: 250px;
-      text-align: center;
-      font-size: 2em
+      max-width: 960px;
+      margin: 0 auto;
+      padding: 32px 16px 48px;
     }
+
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(min(260px, 100%), 1fr));
+      gap: 20px;
+      list-style: none;
+      margin: 0;
+      padding: 0;
+    }
+
+    .card {
+      background-color: var(--card);
+      border: 1px solid #000;
+      border-radius: 8px;
+      padding: 20px;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .card h2 {
+      margin: 0 0 8px;
+      font-size: 1.4em;
+    }
+
+    .card h2 a { text-decoration: none; }
+
+    .card p {
+      margin: 0 0 16px;
+      color: var(--muted);
+      flex: 1;
+    }
+
+    .links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 8px 14px;
+      border-radius: 6px;
+      border: 1px solid #000;
+      background-color: var(--panel);
+      text-decoration: none;
+      font-size: 0.95em;
+    }
+
+    .btn:hover {
+      background-color: #333;
+      color: #fff;
+    }
+
+    .btn-play {
+      background-color: var(--accent);
+      border-color: var(--accent);
+    }
+
+    .btn-play:hover {
+      background-color: var(--accent-hover);
+      border-color: var(--accent-hover);
+    }
+
+    .small {
+      margin-top: 12px;
+      font-size: 0.85em;
+    }
+
+    .small a { color: var(--muted); }
   </style>
-</head>
 </head>
 
 <body>
@@ -57,13 +134,36 @@
     <h1>Arp Central</h1>
   </header>
 
+  <img class="hero" src="assets/images/station-thin.png" alt="A red and white tram pulling into a station in front of a yellow building">
+
   <main>
-	<H2>Perfect Pizza Forever</h2>
+    <ul class="cards">
+      <li class="card">
+        <h2><a href="https://plates.arpcentral.net">Plates</a></h2>
+        <p>The license plate game, with a score. Spot plates on a road trip and earn points based on how far each one travelled.</p>
+        <div class="links">
+          <a class="btn" href="https://plates.arpcentral.net">Visit the website</a>
+          <a class="btn btn-play" href="https://play.google.com/store/apps/details?id=net.arpcentral.tectonics">Get it on Google Play</a>
+        </div>
+      </li>
 
-	<p>An app for the Android platform that helps you make the perfect pizza dough by calculating the water flour ratio for optiaml hydration ratios.</p>
-	<p><a href="perfectpizza/privacy.html">Privacy Policy</a>
+      <li class="card">
+        <h2><a href="https://negativeplayers.com">Negative Players</a></h2>
+        <p>Music, discography, and where to listen.</p>
+        <div class="links">
+          <a class="btn" href="https://negativeplayers.com">Visit the website</a>
+        </div>
+      </li>
+
+      <li class="card">
+        <h2>Perfect Pizza Dough Forever</h2>
+        <p>An Android app that helps you make the perfect pizza dough by calculating the flour to water ratio for the ideal hydration.</p>
+        <div class="links">
+          <a class="btn btn-play" href="https://play.google.com/store/apps/details?id=net.arpcentral.pizzadoh">Get it on Google Play</a>
+        </div>
+        <p class="small"><a href="perfectpizza/privacy.html">Privacy Policy</a></p>
+      </li>
+    </ul>
   </main>
-
-
 </body>
 </html>
